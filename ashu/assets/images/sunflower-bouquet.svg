@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="stemGreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C2D3B2"/>
+      <stop offset="100%" stop-color="#8EA47B"/>
+    </linearGradient>
+    <linearGradient id="ribbonPink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FCDFE3"/>
+      <stop offset="100%" stop-color="#EAA6B3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Stems -->
+  <path d="M 100 130 Q 95 190 85 220" stroke="url(#stemGreen)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M 100 130 Q 105 185 102 225" stroke="url(#stemGreen)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M 100 130 Q 115 190 120 220" stroke="url(#stemGreen)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  
+  <!-- Leaves -->
+  <path d="M 75 160 Q 60 145 75 135 Q 90 145 75 160 Z" fill="#B7C9A5"/>
+  <path d="M 125 165 Q 140 150 125 140 Q 110 150 125 165 Z" fill="#B7C9A5"/>
+
+  <!-- Left Flower -->
+  <g transform="translate(45, 60) scale(0.65)">
+    
+
+  <defs>
+    <radialGradient id="centerGlow" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#8B6349"/>
+      <stop offset="60%" stop-color="#644431"/>
+      <stop offset="100%" stop-color="#41291D"/>
+    </radialGradient>
+    <linearGradient id="petalGrad1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFDD78"/>
+      <stop offset="100%" stop-color="#F2B72C"/>
+    </linearGradient>
+    <linearGradient id="petalGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF0A8"/>
+      <stop offset="100%" stop-color="#F5C042"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <!-- Back row petals (16 petals) -->
+    <g fill="url(#petalGrad1)">
+      <ellipse cx="60" cy="18" rx="8" ry="22"/>
+      <ellipse cx="60" cy="102" rx="8" ry="22"/>
+      <ellipse cx="18" cy="60" rx="22" ry="8"/>
+      <ellipse cx="102" cy="60" rx="22" ry="8"/>
+      <ellipse cx="30" cy="30" rx="8" ry="22" transform="rotate(45 30 30)"/>
+      <ellipse cx="90" cy="90" rx="8" ry="22" transform="rotate(45 90 90)"/>
+      <ellipse cx="30" cy="90" rx="8" ry="22" transform="rotate(-45 30 90)"/>
+      <ellipse cx="90" cy="30" rx="8" ry="22" transform="rotate(-45 90 30)"/>
+      <ellipse cx="40" cy="22" rx="7" ry="20" transform="rotate(22.5 40 22)"/>
+      <ellipse cx="80" cy="98" rx="7" ry="20" transform="rotate(22.5 80 98)"/>
+      <ellipse cx="22" cy="80" rx="20" ry="7" transform="rotate(22.5 22 80)"/>
+      <ellipse cx="98" cy="40" rx="20" ry="7" transform="rotate(22.5 98 40)"/>
+      <ellipse cx="22" cy="40" rx="20" ry="7" transform="rotate(-22.5 22 40)"/>
+      <ellipse cx="98" cy="80" rx="20" ry="7" transform="rotate(-22.5 98 80)"/>
+      <ellipse cx="80" cy="22" rx="7" ry="20" transform="rotate(-22.5 80 22)"/>
+      <ellipse cx="40" cy="98" rx="7" ry="20" transform="rotate(-22.5 40 98)"/>
+    </g>
+    <!-- Front row petals for depth -->
+    <g fill="url(#petalGrad2)">
+      <ellipse cx="60" cy="24" rx="6" ry="17"/>
+      <ellipse cx="60" cy="96" rx="6" ry="17"/>
+      <ellipse cx="24" cy="60" rx="17" ry="6"/>
+      <ellipse cx="96" cy="60" rx="17" ry="6"/>
+      <ellipse cx="35" cy="35" rx="6" ry="17" transform="rotate(45 35 35)"/>
+      <ellipse cx="85" cy="85" rx="6" ry="17" transform="rotate(45 85 85)"/>
+      <ellipse cx="35" cy="85" rx="6" ry="17" transform="rotate(-45 35 85)"/>
+      <ellipse cx="85" cy="35" rx="6" ry="17" transform="rotate(-45 85 35)"/>
+    </g>
+    <!-- Center seed disk -->
+    <circle cx="60" cy="60" r="23" fill="url(#centerGlow)"/>
+    <circle cx="60" cy="60" r="19" fill="#523525" opacity="0.8"/>
+    <!-- Seed ring pattern -->
+    <circle cx="60" cy="60" r="16" fill="none" stroke="#DCA230" stroke-width="2" stroke-dasharray="3,3"/>
+    <circle cx="60" cy="60" r="11" fill="none" stroke="#F5C042" stroke-width="2" stroke-dasharray="2,3"/>
+    <circle cx="60" cy="60" r="6" fill="#8B6349"/>
+  </g>
+
+
+  </g>
+
+  <!-- Right Flower -->
+  <g transform="translate(100, 55) scale(0.68)">
+    
+
+  <defs>
+    <radialGradient id="centerGlow" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#8B6349"/>
+      <stop offset="60%" stop-color="#644431"/>
+      <stop offset="100%" stop-color="#41291D"/>
+    </radialGradient>
+    <linearGradient id="petalGrad1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFDD78"/>
+      <stop offset="100%" stop-color="#F2B72C"/>
+    </linearGradient>
+    <linearGradient id="petalGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF0A8"/>
+      <stop offset="100%" stop-color="#F5C042"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <!-- Back row petals (16 petals) -->
+    <g fill="url(#petalGrad1)">
+      <ellipse cx="60" cy="18" rx="8" ry="22"/>
+      <ellipse cx="60" cy="102" rx="8" ry="22"/>
+      <ellipse cx="18" cy="60" rx="22" ry="8"/>
+      <ellipse cx="102" cy="60" rx="22" ry="8"/>
+      <ellipse cx="30" cy="30" rx="8" ry="22" transform="rotate(45 30 30)"/>
+      <ellipse cx="90" cy="90" rx="8" ry="22" transform="rotate(45 90 90)"/>
+      <ellipse cx="30" cy="90" rx="8" ry="22" transform="rotate(-45 30 90)"/>
+      <ellipse cx="90" cy="30" rx="8" ry="22" transform="rotate(-45 90 30)"/>
+      <ellipse cx="40" cy="22" rx="7" ry="20" transform="rotate(22.5 40 22)"/>
+      <ellipse cx="80" cy="98" rx="7" ry="20" transform="rotate(22.5 80 98)"/>
+      <ellipse cx="22" cy="80" rx="20" ry="7" transform="rotate(22.5 22 80)"/>
+      <ellipse cx="98" cy="40" rx="20" ry="7" transform="rotate(22.5 98 40)"/>
+      <ellipse cx="22" cy="40" rx="20" ry="7" transform="rotate(-22.5 22 40)"/>
+      <ellipse cx="98" cy="80" rx="20" ry="7" transform="rotate(-22.5 98 80)"/>
+      <ellipse cx="80" cy="22" rx="7" ry="20" transform="rotate(-22.5 80 22)"/>
+      <ellipse cx="40" cy="98" rx="7" ry="20" transform="rotate(-22.5 40 98)"/>
+    </g>
+    <!-- Front row petals for depth -->
+    <g fill="url(#petalGrad2)">
+      <ellipse cx="60" cy="24" rx="6" ry="17"/>
+      <ellipse cx="60" cy="96" rx="6" ry="17"/>
+      <ellipse cx="24" cy="60" rx="17" ry="6"/>
+      <ellipse cx="96" cy="60" rx="17" ry="6"/>
+      <ellipse cx="35" cy="35" rx="6" ry="17" transform="rotate(45 35 35)"/>
+      <ellipse cx="85" cy="85" rx="6" ry="17" transform="rotate(45 85 85)"/>
+      <ellipse cx="35" cy="85" rx="6" ry="17" transform="rotate(-45 35 85)"/>
+      <ellipse cx="85" cy="35" rx="6" ry="17" transform="rotate(-45 85 35)"/>
+    </g>
+    <!-- Center seed disk -->
+    <circle cx="60" cy="60" r="23" fill="url(#centerGlow)"/>
+    <circle cx="60" cy="60" r="19" fill="#523525" opacity="0.8"/>
+    <!-- Seed ring pattern -->
+    <circle cx="60" cy="60" r="16" fill="none" stroke="#DCA230" stroke-width="2" stroke-dasharray="3,3"/>
+    <circle cx="60" cy="60" r="11" fill="none" stroke="#F5C042" stroke-width="2" stroke-dasharray="2,3"/>
+    <circle cx="60" cy="60" r="6" fill="#8B6349"/>
+  </g>
+
+
+  </g>
+
+  <!-- Center Big Flower -->
+  <g transform="translate(55, 30) scale(0.8)">
+    
+
+  <defs>
+    <radialGradient id="centerGlow" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#8B6349"/>
+      <stop offset="60%" stop-color="#644431"/>
+      <stop offset="100%" stop-color="#41291D"/>
+    </radialGradient>
+    <linearGradient id="petalGrad1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFDD78"/>
+      <stop offset="100%" stop-color="#F2B72C"/>
+    </linearGradient>
+    <linearGradient id="petalGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF0A8"/>
+      <stop offset="100%" stop-color="#F5C042"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <!-- Back row petals (16 petals) -->
+    <g fill="url(#petalGrad1)">
+      <ellipse cx="60" cy="18" rx="8" ry="22"/>
+      <ellipse cx="60" cy="102" rx="8" ry="22"/>
+      <ellipse cx="18" cy="60" rx="22" ry="8"/>
+      <ellipse cx="102" cy="60" rx="22" ry="8"/>
+      <ellipse cx="30" cy="30" rx="8" ry="22" transform="rotate(45 30 30)"/>
+      <ellipse cx="90" cy="90" rx="8" ry="22" transform="rotate(45 90 90)"/>
+      <ellipse cx="30" cy="90" rx="8" ry="22" transform="rotate(-45 30 90)"/>
+      <ellipse cx="90" cy="30" rx="8" ry="22" transform="rotate(-45 90 30)"/>
+      <ellipse cx="40" cy="22" rx="7" ry="20" transform="rotate(22.5 40 22)"/>
+      <ellipse cx="80" cy="98" rx="7" ry="20" transform="rotate(22.5 80 98)"/>
+      <ellipse cx="22" cy="80" rx="20" ry="7" transform="rotate(22.5 22 80)"/>
+      <ellipse cx="98" cy="40" rx="20" ry="7" transform="rotate(22.5 98 40)"/>
+      <ellipse cx="22" cy="40" rx="20" ry="7" transform="rotate(-22.5 22 40)"/>
+      <ellipse cx="98" cy="80" rx="20" ry="7" transform="rotate(-22.5 98 80)"/>
+      <ellipse cx="80" cy="22" rx="7" ry="20" transform="rotate(-22.5 80 22)"/>
+      <ellipse cx="40" cy="98" rx="7" ry="20" transform="rotate(-22.5 40 98)"/>
+    </g>
+    <!-- Front row petals for depth -->
+    <g fill="url(#petalGrad2)">
+      <ellipse cx="60" cy="24" rx="6" ry="17"/>
+      <ellipse cx="60" cy="96" rx="6" ry="17"/>
+      <ellipse cx="24" cy="60" rx="17" ry="6"/>
+      <ellipse cx="96" cy="60" rx="17" ry="6"/>
+      <ellipse cx="35" cy="35" rx="6" ry="17" transform="rotate(45 35 35)"/>
+      <ellipse cx="85" cy="85" rx="6" ry="17" transform="rotate(45 85 85)"/>
+      <ellipse cx="35" cy="85" rx="6" ry="17" transform="rotate(-45 35 85)"/>
+      <ellipse cx="85" cy="35" rx="6" ry="17" transform="rotate(-45 85 35)"/>
+    </g>
+    <!-- Center seed disk -->
+    <circle cx="60" cy="60" r="23" fill="url(#centerGlow)"/>
+    <circle cx="60" cy="60" r="19" fill="#523525" opacity="0.8"/>
+    <!-- Seed ring pattern -->
+    <circle cx="60" cy="60" r="16" fill="none" stroke="#DCA230" stroke-width="2" stroke-dasharray="3,3"/>
+    <circle cx="60" cy="60" r="11" fill="none" stroke="#F5C042" stroke-width="2" stroke-dasharray="2,3"/>
+    <circle cx="60" cy="60" r="6" fill="#8B6349"/>
+  </g>
+
+
+  </g>
+
+  <!-- Ribbon Tie -->
+  <ellipse cx="102" cy="180" rx="14" ry="7" fill="url(#ribbonPink)"/>
+  <path d="M 96 182 Q 75 195 80 215 Q 92 205 98 185" fill="url(#ribbonPink)"/>
+  <path d="M 108 182 Q 130 195 125 215 Q 112 205 106 185" fill="url(#ribbonPink)"/>
+  <circle cx="102" cy="180" r="5" fill="#E896A6"/>
+</svg>

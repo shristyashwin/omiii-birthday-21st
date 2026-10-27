@@ -1,0 +1,474 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   🌻 21ST BIRTHDAY LOVE STORY - GLOBAL STYLES & DESIGN SYSTEM 🌻
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap');
+
+:root {
+  /* Official Requested Romantic Palette */
+  --butter-yellow: #F8E7A1;
+  --sunflower-gold: #F4C95D;
+  --sunflower-deep: #DE9D26;
+  --creamy-vanilla: #FFF9EF;
+  --soft-blush: #F6DCE1;
+  --blush-deep: #EAA6B3;
+  --warm-peach: #F4C8AD;
+  --peach-deep: #E89F7D;
+  --sage-green: #B7C9A5;
+  --sage-deep: #8EA47B;
+  --warm-brown: #755B4A;
+  --deep-brown: #4A3528;
+  --paper-cream: #FFFAF2;
+  --paper-border: #F3E5D0;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-romantic: 'Cormorant Garamond', Georgia, serif;
+  --font-handwritten: 'Caveat', cursive;
+  --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Shadows & Glows */
+  --shadow-soft: 0 8px 24px rgba(117, 91, 74, 0.07);
+  --shadow-card: 0 14px 34px rgba(117, 91, 74, 0.09);
+  --shadow-deep: 0 20px 48px rgba(117, 91, 74, 0.14);
+  --glow-gold: 0 0 25px rgba(244, 201, 93, 0.45);
+  --glow-blush: 0 0 25px rgba(246, 220, 225, 0.5);
+
+  /* Borders & Radius */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-pill: 999px;
+
+  /* Transitions */
+  --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-bounce: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--creamy-vanilla);
+  color: var(--warm-brown);
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(248, 231, 161, 0.22) 0%, transparent 40%),
+    radial-gradient(circle at 90% 40%, rgba(246, 220, 225, 0.28) 0%, transparent 45%),
+    radial-gradient(circle at 30% 70%, rgba(183, 201, 165, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(244, 200, 173, 0.22) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Custom Selection Highlight */
+::selection {
+  background: var(--butter-yellow);
+  color: var(--deep-brown);
+}
+
+/* Custom Romantic Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--creamy-vanilla);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sunflower-gold);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--creamy-vanilla);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sunflower-deep);
+}
+
+/* Layout Container */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-wrapper {
+  padding: 100px 0;
+  position: relative;
+}
+
+/* Standard Section Headers */
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 60px auto;
+  position: relative;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--butter-yellow);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-handwritten);
+  font-size: 1.35rem;
+  color: var(--warm-brown);
+  margin-bottom: 16px;
+  box-shadow: 0 4px 15px rgba(244, 201, 93, 0.18);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  color: var(--deep-brown);
+  line-height: 1.25;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+  font-family: var(--font-romantic);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-style: italic;
+  color: #8C705E;
+  line-height: 1.5;
+}
+
+/* Pretty Buttons */
+.btn-romantic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--sunflower-gold) 0%, var(--butter-yellow) 100%);
+  color: var(--deep-brown);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 14px 34px;
+  border-radius: var(--radius-pill);
+  border: 2px solid #FFFDF5;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(244, 201, 93, 0.35);
+  transition: var(--transition-bounce);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-romantic::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.6s;
+}
+
+.btn-romantic:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(244, 201, 93, 0.5);
+}
+
+.btn-romantic:hover::after {
+  left: 100%;
+}
+
+.btn-romantic:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-blush {
+  background: linear-gradient(135deg, var(--soft-blush) 0%, var(--warm-peach) 100%);
+  border-color: #FFFDF9;
+  box-shadow: 0 8px 24px rgba(234, 166, 179, 0.3);
+}
+
+.btn-blush:hover {
+  box-shadow: 0 14px 32px rgba(234, 166, 179, 0.45);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid var(--sunflower-gold);
+  color: var(--warm-brown);
+}
+
+.btn-outline:hover {
+  background: var(--butter-yellow);
+}
+
+/* Washi Tape Decorator */
+.washi-tape {
+  position: absolute;
+  width: 110px;
+  height: 26px;
+  background: rgba(248, 231, 161, 0.75);
+  backdrop-filter: blur(2px);
+  border-left: 3px dashed rgba(222, 157, 38, 0.3);
+  border-right: 3px dashed rgba(222, 157, 38, 0.3);
+  box-shadow: 0 2px 6px rgba(117, 91, 74, 0.1);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.washi-pink {
+  background: rgba(246, 220, 225, 0.8);
+  border-left-color: rgba(234, 166, 179, 0.4);
+  border-right-color: rgba(234, 166, 179, 0.4);
+}
+
+.washi-sage {
+  background: rgba(183, 201, 165, 0.75);
+  border-left-color: rgba(142, 164, 123, 0.4);
+  border-right-color: rgba(142, 164, 123, 0.4);
+}
+
+/* Vintage Paper Card Effect */
+.paper-card {
+  background-color: var(--paper-cream);
+  background-image: radial-gradient(rgba(117, 91, 74, 0.04) 1px, transparent 0);
+  background-size: 20px 20px;
+  border: 1px solid var(--paper-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+/* Floating Hearts & Petals Canvas */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99;
+}
+
+/* Interactive Cursor Sparkle Stars */
+.cursor-star {
+  position: fixed;
+  pointer-events: none;
+  z-index: 999999;
+  font-size: 16px;
+  transform: translate(-50%, -50%);
+  animation: starFade 0.75s forwards ease-out;
+}
+
+@keyframes starFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -120%) scale(0.3) rotate(90deg);
+  }
+}
+
+/* Sunflower Scroll Progress Bar */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background: rgba(244, 201, 93, 0.15);
+  z-index: 1000;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--sunflower-gold), var(--blush-deep), var(--sunflower-deep));
+  transition: width 0.1s ease;
+  position: relative;
+}
+
+.scroll-sunflower-indicator {
+  position: absolute;
+  right: -14px;
+  top: -8px;
+  width: 24px;
+  height: 24px;
+  background: url('../assets/images/sunflower-sticker.svg') no-repeat center/contain;
+  animation: slowSpin 10s linear infinite;
+  filter: drop-shadow(0 2px 4px rgba(117, 91, 74, 0.2));
+}
+
+@keyframes slowSpin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Quick Navigation Bar */
+.romantic-nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 990;
+  background: rgba(255, 252, 245, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(244, 201, 93, 0.4);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 26px rgba(117, 91, 74, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: var(--transition-smooth);
+}
+
+.nav-link {
+  color: var(--warm-brown);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover, .nav-link.active {
+  background: var(--butter-yellow);
+  color: var(--deep-brown);
+  transform: translateY(-1px);
+}
+
+/* Floating Audio Player */
+.floating-music-player {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 980;
+  background: rgba(255, 252, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border: 2px solid var(--butter-yellow);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px 8px 10px;
+  box-shadow: 0 10px 30px rgba(117, 91, 74, 0.14);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition-bounce);
+}
+
+.floating-music-player:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(244, 201, 93, 0.3);
+}
+
+.music-disc {
+  padding: 0;
+  flex: 0 0 40px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--sunflower-gold) url('../assets/images/sunflower-sticker.svg') no-repeat center/contain;
+  border: 2px solid #FFFDF5;
+  box-shadow: 0 4px 10px rgba(117, 91, 74, 0.15);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.music-disc.playing {
+  animation: slowSpin 4s linear infinite;
+}
+
+.music-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.music-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--deep-brown);
+  line-height: 1.2;
+}
+
+.music-artist {
+  font-size: 0.75rem;
+  font-family: var(--font-handwritten);
+  font-size: 0.95rem;
+  color: #8C705E;
+}
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-music-play {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--deep-brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.btn-music-play:hover {
+  transform: scale(1.15);
+}
+
+.volume-slider {
+  width: 60px;
+  accent-color: var(--sunflower-gold);
+  cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .section-wrapper {
+    padding: 60px 0;
+  }
+  .romantic-nav {
+    display: none; /* Mobile navigation simplified */
+  }
+  .floating-music-player {
+    bottom: 16px;
+    left: 16px;
+    padding: 6px 12px 6px 8px;
+  }
+  .volume-slider {
+    display: none;
+  }
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

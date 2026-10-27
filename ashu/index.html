@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 21st Birthday, My Sunshine ♡</title>
+  <meta name="description" content="A magical, dreamy 21st birthday love story dedicated to my favorite boy.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    /* Dedicated Print Styling for Greeting Card */
+    @media print {
+      body * { visibility: hidden; }
+      #printable-greeting-card, #printable-greeting-card * {
+        visibility: visible;
+      }
+      #printable-greeting-card {
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%;
+        box-shadow: none;
+        border: 2px solid #755B4A;
+        background: #FFF !important;
+        color: #000 !important;
+      }
+      .card-3d-scene, .card-actions-row, .romantic-nav, .floating-music-player, .floating-edit-btn {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Canvas for Pastel Confetti & Balloons -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Sunflower Scroll Progress Bar -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scroll-progress-bar">
+      <div class="scroll-sunflower-indicator"></div>
+    </div>
+  </div>
+
+
+  <!-- Floating Cute Music Player -->
+  <div class="floating-music-player" id="floating-music-player">
+    <button class="music-disc" type="button" title="Play / Pause our soundtrack" aria-label="Play or pause music"></button>
+    <div class="music-info">
+      <span class="music-title">mine&lt;3</span>
+      <span class="music-artist">our song ♡</span>
+    </div>
+    <div class="music-controls">
+      <button class="btn-music-play" aria-label="Play or Pause music">▶</button>
+      <input type="range" class="volume-slider" min="0" max="1" step="0.05" value="0.5" title="Volume">
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       1. THE OPENING SCREEN SURPRISE OVERLAY
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <section class="intro-overlay" id="intro-overlay">
+    <div class="intro-content">
+      <p class="intro-teaser" id="intro-teaser">pssst... Ashwiniii is turning 21 ♡</p>
+      <p class="intro-subtext" id="intro-subtext">i made a little universe just for you.</p>
+
+      <div class="intro-envelope-box">
+        <div class="envelope-wrapper" id="surprise-envelope">
+          <div class="envelope-back"></div>
+          <div class="envelope-letter-slide">
+            <span style="font-size: 2.2rem; margin-bottom: 6px;">🌻</span>
+            <p style="font-family: var(--font-handwritten); font-size: 1.55rem; color: var(--sunflower-deep); line-height: 1.3;">
+              "You were my best friend before you became my boyfriend, and loving you is one of the most beautiful things in my life."
+            </p>
+            <span style="font-family: var(--font-romantic); font-size: 1.05rem; color: #8C705E; margin-top: 8px;">Happy 21st Birthday, Omii ♡</span>
+          </div>
+          <div class="envelope-front-pocket"></div>
+          <div class="envelope-top-flap"></div>
+          <img class="envelope-wax-seal" src="assets/images/sunflower-sticker.svg" alt="Sunflower Wax Seal">
+        </div>
+      </div>
+
+      <button class="btn-romantic" id="btn-open-surprise">
+        open your birthday surprise ♡
+      </button>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       2. THE MAIN HERO SECTION
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <header class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-card">
+        <img class="hero-bouquet-img float-slow" src="assets/images/sunflower-bouquet.svg" alt="Sunflower Bouquet">
+        <h1 class="hero-heading" id="hero-heading">HAPPY 21ST BIRTHDAY, ASHWINIII ♡</h1>
+        <p class="hero-subheading" id="hero-subheading">
+          to my Omii — the boy who was my best friend, became my favorite person, and somehow made my world infinitely brighter.
+        </p>
+
+        <div>
+          <span class="hero-handwritten-note" id="hero-handwritten-quote">
+            if i could give you one thing in this world, it would be the ability to see yourself through my eyes.
+          </span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#letter" class="btn-romantic">
+            there's so much more i want to tell you... ♡
+          </a>
+          <button class="btn-romantic btn-blush" id="btn-party-popper">
+            CELEBRATE ASHUU'S 21ST!! 🎉
+          </button>
+        </div>
+
+        <div class="hero-scroll-indicator">
+          <span>scroll to explore our little world</span>
+          <div class="mouse-scroll-wheel"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       3. THE SUNFLOWER GARDEN (INTERACTIVE)
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <section class="section-wrapper garden-section" id="garden">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><span>🌻</span> magical garden</div>
+        <h2 class="section-title">The Sunflower Garden</h2>
+        <p class="section-subtitle">
+          "Sunflowers gently swaying in the golden-hour breeze... move your mouse over the blossoms and tap them to discover hidden love notes."
+        </p>
+      </div>
+
+      <div class="garden-meadow">
+        <!-- Injected dynamically by js/garden.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       4. A LOVE LETTER
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <section class="section-wrapper letter-section" id="letter">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><span>💌</span> handwritten with love</div>
+        <h2 class="section-title">From My Heart To Yours</h2>
+        <p class="section-subtitle">A letter written for my best friend and the love of my life.</p>
+      </div>
+
+      <div class="letter-parchment">
+        <!-- Corner Sunflower Flourishes -->
+        <img class="letter-corner-sunflower top-left" src="assets/images/sunflower-bloom.svg" alt="flourish">
+        <img class="letter-corner-sunflower bottom-right" src="assets/images/sunflower-bloom.svg" alt="flourish">
+
+        <div class="letter-header-wrap">
+          <h2 class="letter-title" id="letter-title">For you, with love ♡</h2>
+          <p class="letter-subtitle" id="letter-subtitle">Happy 21st, my love.</p>
+        </div>
+
+        <div class="letter-body" id="letter-body-container">
+          <!-- Rendered dynamically by js/app.js covering sections A through J -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       5. 21 REASONS YOU'RE MY SUNSHINE
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <section class="section-wrapper" id="reasons">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><span>☀️</span> 21 reasons for 21 years</div>
+        <h2 class="section-title">Reasons You're My Sunshine</h2>
+        <p class="section-subtitle">Twenty-one scrapbook notes for twenty-one beautiful years. Tap each card to celebrate a reason.</p>
+      </div>
+
+      <div class="reasons-grid" id="reasons-grid-container">
+        <!-- Injected dynamically by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       7. THE BIRTHDAY GREETING CARD (3D FOLDING CARD)
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <section class="section-wrapper card-section" id="greeting-card">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><span>🎀</span> handmade keepsake</div>
+        <h2 class="section-title">Your 21st Birthday Greeting Card</h2>
+        <p class="section-subtitle">A little birthday note, made just for you. Tap to open!</p>
+      </div>
+
+      <div class="card-3d-scene">
+        <div class="card-3d-container" id="printable-greeting-card">
+          <!-- Front Cover -->
+          <div class="card-3d-face card-front">
+            <span style="font-size: 2.8rem; margin-bottom: 14px;">🌻</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.85rem; color: var(--deep-brown); margin-bottom: 12px;" id="card-cover-title">
+              for my Jannu, on his 21st birthday ♡
+            </h3>
+            <p style="font-family: var(--font-handwritten); font-size: 1.45rem; color: var(--sunflower-deep);">
+              (tap to open)
+            </p>
+            <div style="margin-top: 24px;">
+              <img src="assets/images/sunflower-sticker.svg" alt="sticker" width="60" height="60">
+            </div>
+          </div>
+
+          <!-- Inside Card -->
+          <div class="card-3d-face card-inside">
+            <div>
+              <h3 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--deep-brown); margin-bottom: 12px;" id="card-inside-heading">
+                Happy 21st, Ashwini!
+              </h3>
+              <p style="font-family: var(--font-romantic); font-size: 1.25rem; line-height: 1.8; color: #5C4334; white-space: pre-line;" id="card-inside-body">
+                It still makes me smile that we met in a Salesforce lab. I thought I was making a friend; I didn't know you'd become one of my favorite people.
+
+                I'm grateful for all our laughs, the little memories, and the way our friendship grew into something more. I hope this year brings you good things, new adventures, and plenty of reasons to feel proud. I'll be right here, cheering you on—and probably teasing you, too.
+
+                Have the best birthday. Love you lots.
+              </p>
+            </div>
+            <div style="text-align: right; margin-top: 20px;">
+              <p style="font-family: var(--font-handwritten); font-size: 1.8rem; color: var(--sunflower-deep);" id="card-inside-signature">
+                all my love, your nautanki ♡
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-actions-row">
+        <button class="btn-romantic" id="btn-open-card">Open Greeting Card ♡</button>
+        <button class="btn-romantic btn-outline" id="btn-print-card">Print / Save as PDF 📄</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       8. THE BIRTHDAY CAKE AND CANDLE WISH
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <section class="section-wrapper cake-section" id="cake">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><span>🎂</span> birthday ritual</div>
+        <h2 class="section-title">21 Looks So Handsome On You, Ashuu ♡</h2>
+        <p class="section-subtitle">Click the candles to toggle their flames, then make your 21st birthday wish.</p>
+      </div>
+
+      <div class="cake-interaction-box">
+        <!-- Storybook SVG Cake -->
+        <div class="cake-illustration-svg">
+          <!-- Injected from assets/images/birthday-cake.svg via object or inline -->
+          <img src="assets/images/birthday-cake.svg" class="cake-illustration-svg" alt="Birthday Cake with 21 Candles">
+        </div>
+
+        <button class="btn-romantic btn-blush" id="btn-make-wish">
+          Make a Birthday Wish 🎂
+        </button>
+
+        <div class="wish-message-reveal" id="cake-wish-reveal">
+          <p id="cake-wish-text">
+            i hope at least a hundred beautiful things find their way to you this year. Happy 21st, my sunshine! ✨🌻
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       9. "IF I COULD GIVE YOU THE WORLD" SECTION
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <section class="section-wrapper world-section" id="world">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><span>☁️</span> future wishes</div>
+        <h2 class="section-title">If I Could Give You The World...</h2>
+        <p class="section-subtitle">A collection of hopes and quiet prayers I hold for your path ahead.</p>
+      </div>
+
+      <div class="clouds-grid" id="world-clouds-container">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+
+      <p class="world-conclusion-quote" id="world-conclusion">
+        "i can't give you the whole world, my love. but i can always wish for it to be kinder to you."
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       10. TIMELINE OF OUR STORY
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <section class="section-wrapper timeline-section" id="timeline">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><span>🕊️</span> our journey</div>
+        <h2 class="section-title">From Best Friends to My Favorite Kind of Love ♡</h2>
+        <p class="section-subtitle">The sweetest story in the world, one milestone at a time.</p>
+      </div>
+
+      <div class="vertical-timeline" id="timeline-container">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       11. THE OPEN-WHEN LETTERS
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <section class="section-wrapper" id="open-when">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><span>✉️</span> little pieces of comfort</div>
+        <h2 class="section-title">Open When Letters</h2>
+        <p class="section-subtitle">Little letters for whenever you need a reminder of how cherished and loved you are.</p>
+      </div>
+
+      <div class="open-when-grid">
+        <!-- Rendered dynamically by js/open-when.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       12. THE SECRET SURPRISE (HIDDEN SUNFLOWER BUTTON)
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <div class="secret-trigger-wrap">
+    <button class="btn-secret-sunflower" id="btn-secret-sunflower" title="A tiny secret...">
+      <img class="secret-icon" src="assets/images/sunflower-bloom.svg" alt="Secret Sunflower">
+      <span class="secret-label">psst... one last little thing ♡</span>
+    </button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       13. THE FINAL BIRTHDAY MESSAGE & REPLAY
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <footer class="final-section" id="final">
+    <div class="container">
+      <div class="final-card">
+        <span style="font-size: 3.2rem; display: block; margin-bottom: 14px;">🌻</span>
+        <h2 class="final-heading" id="final-heading">happy 21st birthday, my jannu ♡</h2>
+        
+        <div class="final-paragraphs" id="final-paragraphs-container">
+          <!-- Rendered dynamically by js/app.js with full prose from prompt -->
+        </div>
+
+        <div class="final-signature-wrap">
+          <p class="final-signature" id="final-signature">made with all my love, just for you. — your nautanki 🌻</p>
+        </div>
+
+        <button class="btn-romantic" id="btn-replay-story">
+          replay our little story ♡
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       MODALS & DIALOGS
+       ═══════════════════════════════════════════════════════════════════════════ -->
+
+  <!-- 1. Garden Note Modal -->
+  <div class="modal-backdrop" id="garden-modal" role="dialog" aria-modal="true">
+    <div class="secret-note-dialog">
+      <button class="modal-close-btn" id="garden-modal-close" aria-label="Close Note">&times;</button>
+      <span style="font-size: 2.6rem; display: block; margin-bottom: 10px;">🌻</span>
+      <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--deep-brown); margin-bottom: 14px;" id="garden-modal-title"></h3>
+      <p style="font-family: var(--font-handwritten); font-size: 1.6rem; color: #5C4334; line-height: 1.6;" id="garden-modal-body"></p>
+    </div>
+  </div>
+
+  <!-- 2. Open-When Letter Modal -->
+  <div class="modal-backdrop" id="open-when-modal" role="dialog" aria-modal="true">
+    <div class="secret-note-dialog" style="max-width: 600px; text-align: left;">
+      <button class="modal-close-btn" id="open-when-modal-close" aria-label="Close Letter">&times;</button>
+      <div style="text-align: center; margin-bottom: 16px;">
+        <span id="open-when-modal-badge" style="font-size: 2.4rem;">💌</span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--deep-brown); margin-top: 8px;" id="open-when-modal-title"></h3>
+      </div>
+      <div style="font-family: var(--font-romantic); font-size: 1.25rem; line-height: 1.8; color: #5A4032; max-height: 55vh; overflow-y: auto; padding-right: 8px;" id="open-when-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- 3. Secret Surprise Modal -->
+  <div class="modal-backdrop" id="secret-modal" role="dialog" aria-modal="true">
+    <div class="secret-note-dialog" style="max-width: 600px; text-align: left;">
+      <button class="modal-close-btn" id="secret-modal-close" aria-label="Close Secret">&times;</button>
+      <div style="text-align: center; margin-bottom: 16px;">
+        <span style="font-size: 3rem;">✨🌻✨</span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--deep-brown); margin-top: 8px;" id="secret-modal-title"></h3>
+      </div>
+      <div style="font-family: var(--font-romantic); font-size: 1.22rem; line-height: 1.8; color: #5A4032; margin-bottom: 20px;" id="secret-modal-body"></div>
+      
+      <div style="border-top: 1px dashed var(--sunflower-gold); padding-top: 14px;">
+        <h4 style="font-family: var(--font-handwritten); font-size: 1.4rem; color: var(--sunflower-deep); margin-bottom: 8px;">A few of our favorite little things:</h4>
+        <ul id="secret-modal-jokes" style="padding-left: 20px; font-family: var(--font-body); font-size: 0.95rem; color: #6E5445; line-height: 1.6;"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/audio-player.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/garden.js"></script>
+  <script src="js/cake.js"></script>
+  <script src="js/greeting-card.js"></script>
+  <script src="js/open-when.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
